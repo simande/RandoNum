@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
   def new
+    if !session[:uid].blank?
+      n = Number.latest
+      redirect_to '/is/' + n.to_s
+    end
     @user = User.new
   end
   
