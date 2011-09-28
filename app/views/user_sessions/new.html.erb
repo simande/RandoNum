@@ -1,8 +1,8 @@
 <h2>Sign in for today's number</h2>
 <%= form_for @user_session do |f| %>
-	<%= f.label :email, 'email:' %>
+	<%= f.label :email, 'Email:' %>
 	<%= f.text_field :email, :class => 'user_input' %>
-	<%= f.label :password, 'password:' %>
+	<%= f.label :password, 'Password:' %>
 	<%= f.password_field :password, :class => 'user_input' %>
 	<%= f.submit 'Sign In', :class => 'user_submit' %>
 	
