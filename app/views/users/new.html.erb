@@ -1,0 +1,15 @@
+<h2>Sign up for daily numbers</h2>
+<%= form_for @user do |f| %>
+	<%= f.label :email, 'email:' %>
+	<%= f.text_field :email, :class => 'user_input' %>
+	<%= f.label :password, 'password:' %>
+	<%= f.password_field :password, :class => 'user_input' %>
+	<%= f.submit 'Sign Up', :class => 'user_submit' %>
+	
+	<% if @user.errors.count > 0 %>
+		<div class="notice"><%= @user.errors.full_messages.join(", ") %></div>
+	<% end %>
+	
+<% end %>
+
+<h1><a href="/">RandoNum</a></h1>

@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def new
+    @user = User.new
+  end
+  
   def create
     @user = User.new(params[:user])
     
@@ -7,7 +11,7 @@ class UsersController < ApplicationController
       n = Number.latest
       redirect_to '/is/' + n.to_s
     else
-      redirect_to '/', notice: @user.errors.full_messages.join(", ")
+      render :new
     end
   end
 end

@@ -9,7 +9,7 @@ class UserSession < ActiveRecord::Base
       if @user
         hashed_password = Digest::SHA1.hexdigest(@user.salt + self.password + 'histaticsalt')
         if hashed_password == @user.hashed_password
-          self.id = @user.id
+          self.user_id = @user.id
           return true
         end
       end

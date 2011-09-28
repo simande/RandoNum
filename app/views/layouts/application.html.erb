@@ -8,7 +8,13 @@
 </head>
 <body>
 	<header>
-		<a href="/signin">Sign In</a>
+		<% if !session[:uid].blank? %>
+			<a href="/signout">Sign Out</a>
+		<% elsif controller_name == "user_sessions" %>
+			<a href="/">Sign Up</a>
+		<% else %>
+			<a href="/signin">Sign In</a>
+		<% end %>
 	</header>
 	<%= yield %>
 

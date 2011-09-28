@@ -1,4 +1,4 @@
-<!-- <h2>Sign in for today's number</h2>
+<h2>Sign in for today's number</h2>
 <%= form_for @user_session do |f| %>
 	<%= f.label :email, 'email:' %>
 	<%= f.text_field :email, :class => 'user_input' %>
@@ -6,22 +6,8 @@
 	<%= f.password_field :password, :class => 'user_input' %>
 	<%= f.submit 'Sign In', :class => 'user_submit' %>
 	
-	<% if notice %>
-		<div class="notice"><%= notice %></div>
-	<% end %>
-	
-<% end %> -->
-
-<h2>Sign up for daily numbers</h2>
-<%= form_for @user do |f| %>
-	<%= f.label :email, 'email:' %>
-	<%= f.text_field :email, :class => 'user_input' %>
-	<%= f.label :password, 'password:' %>
-	<%= f.password_field :password, :class => 'user_input' %>
-	<%= f.submit 'Sign Up', :class => 'user_submit' %>
-	
-	<% if notice %>
-		<div class="notice"><%= notice %></div>
+	<% if @user_session.errors.count > 0 %>
+		<div class="notice"><%= @user_session.errors.full_messages.join(", ") %></div>
 	<% end %>
 	
 <% end %>

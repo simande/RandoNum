@@ -36,6 +36,7 @@ form {
 		bottom: -33px; width: 100%;
 		position: absolute;
 	}
+	.field_with_errors { display: inline; }
 input {
 	font-size: 16px; font-family: Georgia, Times, "Times New Roman", serif; vertical-align: middle; letter-spacing: -1px;
 	border: 0;

@@ -1,5 +1,7 @@
 Randonum::Application.routes.draw do
-  root :to => 'user_sessions#new'
+  root :to => 'users#new'
+  get '/signin' => 'user_sessions#new'
+  get '/signout' => 'user_sessions#destroy'
   resources :users, :only => :create
   resources :user_sessions, :only => [:new, :create]
   get 'is/:number' => 'numbers#index'

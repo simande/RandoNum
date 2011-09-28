@@ -1,6 +1,5 @@
 class UserSessionsController < ApplicationController
   def new
-    @user = User.new
     @user_session = UserSession.new()
   end
   
@@ -12,9 +11,12 @@ class UserSessionsController < ApplicationController
       n = Number.latest
       redirect_to '/is/' + n.to_s
     else
-      @user = User.new
-      flash[:notice] = "Invalid email and/or password."
       render :new
     end
+  end
+  
+  def destroy
+    session[:uid] = nil
+    redirect_to '/signin'
   end
 end
