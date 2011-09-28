@@ -1,9 +1,5 @@
-class UserSession
-  include ActiveModel::Validations
-  include ActiveModel::Conversion
-  extend ActiveModel::Naming
-  
-  attr_accessor :email, :password, :id
+class UserSession < ActiveRecord::Base
+  attr_accessor :password, :user_id
   
   validate :check_password
   
@@ -19,21 +15,5 @@ class UserSession
       end
     end
     errors.add(:base, "Incorrect email and/or password.")
-  end
-
-  class << self
-    def all
-      return []
-    end
-  end
-
-  def initialize(attributes = {})
-    attributes.each do |name, value|
-      send("#{name}=", value)
-    end
-  end
-
-  def persisted?
-    false
   end
 end

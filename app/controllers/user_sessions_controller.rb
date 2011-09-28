@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
 
-    if @user_session.valid?
+    if @user_session.save
       session[:uid] = @user_session.id
       n = Number.latest
       redirect_to '/is/' + n.to_s
