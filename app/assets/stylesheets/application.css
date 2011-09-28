@@ -15,19 +15,20 @@ body, html {
 body {
 	text-align: center; font: 16px/1.3em "Hammersmith One", Helvetica, Arial, sans-serif; color: #021521; text-shadow: 1px 1px #a6c8dd;
 	background: #5687a4 url( '/assets/background.png' ) left top repeat;
-	padding-top: 15px; min-height: 500px;
+	padding-top: 15px; padding-bottom: 50px; min-height: 500px;
 }
 
 header {
 	text-align: right;
 	width: 780px; margin: 0 auto 90px;
+	display: block;
 }
 
 h1 {
 	font: 156px/1.2em "Cabin Sketch", Times, "Times New Roman", serif; text-shadow: none;
 }
 h2 {
-	font-size: 63px; line-height: 1.3em;
+	font-size: 63px; line-height: 1.2em;
 	margin-bottom: 20px;
 }
 
@@ -78,4 +79,21 @@ a {
 }
 	a:hover {
 		color: #000;
+	}
+	
+article {
+	text-align: left;
+	width: 420px; margin: 0 auto; padding-top: 85px;
+	display: block;
+}
+	article h2 {
+		background: url('/assets/border-horizontal.png') left bottom repeat-x;
+	}
+	
+table {
+	text-align: left;
+	width: 100%; border: 0; padding: 0; border-collapse: collapse; border-spacing: 0; table-layout: fixed;
+}
+	table th, table td {
+		padding: 5px 0;
 	}

@@ -1,15 +1,17 @@
 <h1><%= number_with_delimiter @number %></h1>
 
-<h2>Leaderboard</h2>
-<table>
-	<tr>
-		<th>User</th>
-		<th># of Sign-ins</th>
-	</tr>
-<% @users.each do |u| %>
-	<tr>
-		<td><%= u.email.split("@")[0] %></td>
-		<td><%= u.num_logins %></td>
-	</tr>
-<% end %>
-</table>
+<article>
+	<h2>Leaderboard</h2>
+	<table>
+		<tr>
+			<th>User</th>
+			<th># of Sign-ins</th>
+		</tr>
+	<% @users.each do |u| %>
+		<tr>
+			<td><%= u.email.split("@")[0] %></td>
+			<td><%= u.num_logins %></td>
+		</tr>
+	<% end %>
+	</table>
+</article>
