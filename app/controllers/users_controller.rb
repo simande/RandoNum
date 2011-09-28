@@ -3,7 +3,9 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     
     if @user.save
-      redirect_to('/is')
+      session[:uid] = @user.id
+      n = Number.latest
+      redirect_to '/is/' + n.to_s
     else
       redirect_to '/', notice: @user.errors.full_messages.join(", ")
     end
