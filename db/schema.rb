@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20110928051128) do
     t.string   "email"
     t.string   "hashed_password"
     t.string   "salt"
+    t.integer  "num_logins",      :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

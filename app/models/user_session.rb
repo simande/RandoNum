@@ -2,6 +2,7 @@ class UserSession < ActiveRecord::Base
   attr_accessor :password, :user_id
   
   validate :check_password
+  after_save :increment_num_logins
   
   def check_password
     if !self.email.blank? && !self.password.blank?
@@ -15,5 +16,9 @@ class UserSession < ActiveRecord::Base
       end
     end
     errors.add(:base, "Incorrect email and/or password.")
+  end
+  
+  def increment_num_logins
+    User.update_all("num_logins = num_logins + 1", ["email = ?", self.email])
   end
 end
