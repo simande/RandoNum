@@ -3,5 +3,78 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
- *= require_tree . 
 */
+
+* {
+	margin: 0; padding: 0;
+}
+
+body, html {
+	width: 100%; min-width: 760px;
+}
+body {
+	text-align: center; font: bold italic 14px/1.3em Georgia, Times, "Times New Roman", serif; color: #021521; text-shadow: 1px 1px #a6c8dd;
+	background: #5687a4 url( '/assets/background.png' ) left top repeat;
+	padding-top: 15px; min-height: 500px;
+}
+
+header {
+	text-align: right;
+	width: 760px; margin: 0 auto 90px;
+}
+
+h1 {
+	font: 150px/1.2em "Cabin Sketch", Georgia, Times, "Times New Roman", serif; text-shadow: none;
+}
+
+form {
+	margin-bottom: 80px;
+	position: relative;
+}
+	.notice {
+		color: #690000;
+		bottom: -33px; width: 100%;
+		position: absolute;
+	}
+input {
+	font-size: 16px; font-family: Georgia, Times, "Times New Roman", serif; vertical-align: middle; letter-spacing: -1px;
+	border: 0;
+	display: inline-block;
+}
+	input:focus {
+		outline: 0;
+	}
+	.user_input {
+		line-height: 1.2em; color: #6a8a9f;
+		background: url('/assets/input-text.png') left center no-repeat;
+		width: 237px; height: 56px; padding-left: 15px; margin-right: 10px;
+	}
+		.user_input:focus {
+			color: #021521;
+		}
+	.user_submit {
+		color: #a0bed3; cursor: pointer; font-weight: bold; font-style: italic;
+		background: url('/assets/input-submit.png') left center no-repeat;
+		width: 110px; height: 43px;
+	}
+		.user_submit:hover {
+			color: #d0e2ee;
+		}
+	
+label {
+	vertical-align: middle;
+	margin-right: 3px;
+	display: inline-block;
+}
+
+h2 {
+	font-size: 54px; line-height: 1.4em;
+	margin-bottom: 25px;
+}
+
+a {
+	color: inherit; text-decoration: none;
+}
+	a:hover {
+		color: #000;
+	}

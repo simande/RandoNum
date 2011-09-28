@@ -2,13 +2,15 @@
 <html>
 <head>
   <title>Randonum</title>
-  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag    "http://fonts.googleapis.com/css?family=Cabin+Sketch:700", "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+	<header>
+		<a href="/signin">Sign In</a>
+	</header>
+	<%= yield %>
 
 </body>
 </html>
